@@ -1,8 +1,3 @@
-# React + Vite
+# Morocco Association of Free Surfers Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This is the official website for the Morocco Association of Free Surfers, a community-based surf club located in Rabat, Morocco. Our site provides information about our surf lessons, coaches, and the best surfing spots in Morocco. It also features events, community activities, and resources for surfers of all levels looking to improve their skills and connect with others. Join our family and experience the vibrant surf culture of Morocco!
