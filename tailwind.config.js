@@ -10,6 +10,11 @@ export default {
         synonym: ['Synonym', 'sans-serif'],
         amulya: ['Amulya', 'sans-serif'],
       },
+      colors: {
+        light: '#ECE3DE',
+        accent: '#1A548A',
+        dark: '#2F2C2C',
+      },
     },
   },
   plugins: [],
