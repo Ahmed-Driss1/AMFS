@@ -98,7 +98,7 @@ export default function ServiceSection() {
 
       {/* Display selected description on larger screens */}
     
-      <div className="font-synonym text-lg text-dark hidden lg:block text-center max-w-2xl pb-12 pt-6 border-t-0 border	">
+      <div className="font-synonym text-lg text-dark hidden lg:block text-center max-w-2xl pb-12 pt-6 border-t-0 border-dark">
         {selectedService === null ? "we offer a variaty of shit test us out" :
           services.find((service) => service.id === selectedService)?.description}
       </div>
