@@ -12,14 +12,14 @@ export default {
         amulya: ['Amulya', 'sans-serif'],
         Shrikhand: ['Shrikhland', 'serif'],
       },
-    
+      
       colors: {
         light: '#ECE3DE',
         accent: '#1A548A',
         dark: '#2F2C2C',
       },
       aspectRatio: {
-        "9/6" : '9 / 6'
+        "9/6" : '9 / 6',
 
       },
      
