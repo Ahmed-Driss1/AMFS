@@ -6,56 +6,60 @@ import aboutimage2 from "@/assets/images/about2.jpg";
 export default function About() {
     const tiltRefs = useRef([]);
 
-    useEffect(() => {
-        tiltRefs.current.forEach((tiltRef) => {
-          if (tiltRef) {
-            VanillaTilt.init(tiltRef, {
-              max: 10, // Subtle tilt effect
-              speed: 700, // Smooth transition speed
-              glare: true,
-              "max-glare": 0.2,
-              easing: "cubic-bezier(.03,.98,.52,.99)", // Smooth easing
-            });
-          }
-        });
+    // useEffect(() => {
+    //     tiltRefs.current.forEach((tiltRef) => {
+    //       if (tiltRef) {
+    //         VanillaTilt.init(tiltRef, {
+    //           max: 10, // Subtle tilt effect
+    //           speed: 700, // Smooth transition speed
+    //           glare: true,
+    //           "max-glare": 0.2,
+    //           easing: "cubic-bezier(.03,.98,.52,.99)", // Smooth easing
+    //         });
+    //       }
+    //     });
 
-        // Clean up effect
-        return () => {
-          tiltRefs.current.forEach((tiltRef) => tiltRef?.vanillaTilt?.destroy());
-        };
-    }, []);
+    //     // Clean up effect
+    //     return () => {
+    //       tiltRefs.current.forEach((tiltRef) => tiltRef?.vanillaTilt?.destroy());
+    //     };
+    // }, []);
+
+
+    // ref={(el) => (tiltRefs.current[0] = el)}
 
     return (
         <>
-            <section className="min-h-screen bg-light flex flex-col items-center gap-7 py-8">
-                <h2 className="font-amulya text-center text-accent text-5xl pt-10">More than a surf club</h2>
-
-                <div className="p-5 grid gap-4 sm:gap-y-44 lg:gap-y-12 grid-cols-1 lg:grid-cols-3 pt-14 px-4 lg:px-28 ">
-                    {/* First Row: Text 2/3, Image 1/3 */}
-                    <p className="font-synonym text-xl text-dark lg:col-span-2 lg:order-1 order-1 text-center lg:text-left mx-auto lg:mr-32 lg:pr-8 ">
-                        Located in Rabat, Morocco, Morocco Association of Free Surfers is a welcoming community for surfers of all levels. United by our love for the ocean, we offer a friendly space for everyone to learn, grow, and connect with fellow surf enthusiasts.
-                    </p>
-                    <img
+            <section className="min-h-screen bg-light flex flex-col items-center gap-20">
+              <h2 className="text-accent font-Shrikhand text-4xl my-8">More than a surf club</h2>
+              <div className=" h-auto flex flex-row items-center px-20 gap-20">
+                <div className="text-xl w-1/2">
+                        <p>
+                        Based in Rabat, Morocco, Morocco Association of Free Surfers is a welcoming community where surfers of all levels can learn, grow, and connect through a shared love for the ocean.
+                        </p>
+                    </div>
+                    <div className="w-1/2"> 
+                        <img 
                         src={aboutimage1}
                         alt="group of surfers"
-                        className="w-full h-auto lg:col-span-1 lg:order-2 order-2 rounded-lg lg:hover:scale-105 lg:hover:shadow-2xl transition-all duration-500"
-                        ref={(el) => (tiltRefs.current[1] = el)}
-                    />
-
-                    {/* Second Row: Image 1/3, Text 2/3 */}
-                    <img
+                        className="rounded-2xl" />
+                    </div>
+                 
+              </div>
+              <div className=" h-auto flex flex-row-reverse items-center px-20 gap-20">
+                <div className="text-xl w-1/2 ">
+                        <p>
+                        Our mission is to promote surfing in Morocco and help everyone excel on the waves. With Morocco’s stunning coastline, we provide a supportive space for surfers of all levels.
+                        </p>
+                    </div>
+                    <div className="w-1/2 h-auto"> 
+                        <img 
                         src={aboutimage2}
-                        alt="high performer surfing"
-                        className="w-full h-auto lg:col-span-1 lg:order-3 order-4 rounded-lg lg:hover:scale-105 lg:hover:shadow-2xl transition-all duration-500"
-                        ref={(el) => (tiltRefs.current[0] = el)}
-                    />
-                    <p className="font-synonym text-xl text-dark lg:col-span-2 lg:order-4 order-3 text-center lg:text-left mx-auto lg:ml-32 lg:pl-8">
-                        Our mission is to advance the sport of surfing in Morocco and help each person reach new heights on the waves. With Morocco’s stunning coastline as our playground, we provide a welcoming environment where surfers of all levels can grow and thrive. Our skilled instructors are dedicated to guiding you on your journey.                   
-                    </p>
-                </div>
-                <button className="font-synonym font-black border-4 border-accent text-dark lg:text-2xl lg:h-20 sm:w-1/2 sm:text-lg md:w-1/3 lg:w-1/5 p-3 rounded-lg lg:hover:scale-110 transition-transform duration-500 mt-6">
-                    More about us
-                </button>
+                        alt="group of surfers"
+                        className="px-14 rounded-xl" />
+                    </div>
+                 
+              </div>
             </section>
         </>
     );

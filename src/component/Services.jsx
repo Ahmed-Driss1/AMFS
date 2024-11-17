@@ -59,7 +59,7 @@ export default function ServiceSection() {
 
   return (
     <section className="flex flex-col items-center gap-6 lg:gap-4 p-6 bg-light min-h-screen lg:max-h-screen">
-      <h2 className="font-amulya text-center text-accent text-4xl lg:text-3xl pt-8 lg:pt-4">What we offer</h2>
+      <h2 className="font-amulya text-center text-accent text-4xl lg:text-3xl pt-8 lg:pt-4 ">What we offer</h2>
 
       <div className="w-full lg:grid lg:grid-cols-3 gap-4 lg:h-2/3">
         {services.map((service, index) => (
