@@ -58,50 +58,47 @@ export default function ServiceSection() {
   }, []);
 
   return (
-    <section className="flex flex-col items-center gap-6 lg:gap-4 p-6 bg-light min-h-screen lg:max-h-screen">
-      <h2 className="font-amulya text-center text-accent text-4xl lg:text-3xl pt-8 lg:pt-4 ">What we offer</h2>
-
-      <div className="w-full lg:grid lg:grid-cols-3 gap-4 lg:h-2/3">
-        {services.map((service, index) => (
-          <div
-            key={service.id}
-            ref={(el) => (tiltRefs.current[index] = el)}
-            className="flex flex-col items-center cursor-pointer transition-transform duration-500"
-            onClick={() => handleClick(service.id)}
-          >
-            <img
-              src={service.image}
-              alt={service.imagealt}
-              className={`w-full rounded-lg transition-transform duration-500 shadow-lg ${
-                selectedService === null
-                  ? "scale-100"
-                  : selectedService === service.id
-                  ? "scale-105"
-                  : "scale-90"
-              }`}
-            />
-            <h3 className="mt-3 text-lg lg:text-base font-bold text-accent font-amulya">{service.title}</h3>
-
-            {/* Conditionally render description based on screen size */}
-            <p
-              className={`my-8 pb-6 text-center text-dark font-synonym lg:pb-10 ${
-                selectedService === service.id || window.innerWidth < 1024
-                  ? "block"
-                  : "hidden"
-              } lg:hidden`}
-            >
-              {service.description}
-            </p>
-          </div>
-        ))}
-      </div>
-
-      {/* Display selected description on larger screens */}
+    <section className="bg-light min-h-screen">
+      <div className="flex flex-col items-center gap-20 pt-10 pb-48">
+        <div>
+          <h2 className="text-accent text-center mt-9 font-Shrikhand text-2xl sm:text-3xl md:text-4xl lg:text-6xl">More than a surf club</h2>
+        </div> 
     
-      <div className="font-synonym text-lg text-dark hidden lg:block text-center max-w-2xl pb-12 pt-6 border-t-0 border-dark">
-        {selectedService === null ? "we offer a variaty of shit test us out" :
-          services.find((service) => service.id === selectedService)?.description}
-      </div>
+        <div className="flex gap-20 flex-col lg:flex-row items-center px-7 mb-20 cursor-pointer">
+          {services.map((service, index) => (
+              <div className="flex flex-col gap-4 md:flex-row lg:flex-col items-center" 
+              onClick={()=> handleClick(service.id)}
+              key={service.id}>
+
+                <div className={`md:w-1/2 lg:w-auto transition-transform duration-500
+                  ${
+                    selectedService === null
+                      ? "scale-100"
+                      : selectedService === service.id
+                      ? "scale-105 shadow-lg"
+                      : "scale-90 opacity-85"
+                  }`} >
+                <img
+                ref={(el) => (tiltRefs.current[index] = el)}
+                  src={service.image}
+                  alt={service.imagealt}
+                  className={`w-full rounded-lg  shadow-lg `} 
+              />
+                </div>
+
+                <div className="md:w-1/2 lg:w-auto flex flex-col md:gap-3">
+                    <h3 className="text-center text-xl md:text-2xl text-accent font-amulya">{service.title}</h3>
+                    <p className="text-dark text-center lg:hidden text-m md:text-xl">{service.description}</p>
+                </div>
+
+              </div>
+          ))}
+        </div>
+        <div>
+          {selectedService }
+        </div>
+        
+    </div>
     </section>
   );
 }
