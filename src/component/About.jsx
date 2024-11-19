@@ -61,7 +61,7 @@ export default function About() {
                     <img ref={(el) => (tiltRefs.current[1] = el)}
                         src={aboutimage2}
                         alt="group of surfers"
-                        className="w-auto lg:h-80 object-cover rounded-xl h-48" />
+                        className="w-auto lg:h-80 object-cover rounded-xl h-48 " />
                     </div>
                  
               </div>

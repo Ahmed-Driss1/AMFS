@@ -7,14 +7,14 @@ import serviceImage3 from "@/assets/images/about1.jpg";
 const services = [
   {
     id: 1,
-    title: "Surf Lessons & Coaching",
+    title: "Lessons & Coaching",
     description: "Whether you're a beginner or looking to advance, our surf lessons and coaching are tailored to your needs, with experienced instructors helping you progress at your own pace.",
     image: serviceImage1,
     imagealt: "Surf Lessons & Coaching",
   },
   {
     id: 2,
-    title: "Surf Equipment Rentals",
+    title: "Equipment Rentals",
     description: "We offer high-quality surfboards, wetsuits, and other gear for rent, so you can enjoy your surf experience without the hassle of bringing your own equipment.",
     image: serviceImage2,
     imagealt: "Surf Equipment Rentals",
@@ -59,14 +59,14 @@ export default function ServiceSection() {
 
   return (
     <section className="bg-light min-h-screen">
-      <div className="flex flex-col items-center gap-20 pt-10 pb-48">
+      <div className="flex flex-col items-center gap-10 pt-10 pb-48">
         <div>
-          <h2 className="text-accent text-center mt-9 font-Shrikhand text-2xl sm:text-3xl md:text-4xl lg:text-6xl">More than a surf club</h2>
+          <h2 className="text-accent text-center mt-9 mb-20 font-Shrikhand text-2xl sm:text-3xl md:text-4xl lg:text-6xl">More than a surf club</h2>
         </div> 
     
         <div className="flex gap-20 flex-col lg:flex-row items-center px-7 mb-20 cursor-pointer">
           {services.map((service, index) => (
-              <div className="flex flex-col gap-4 md:flex-row lg:flex-col items-center" 
+              <div className="flex flex-col gap-4 md:flex-row lg:flex-col items-center lg:gap-8" 
               onClick={()=> handleClick(service.id)}
               key={service.id}>
 
@@ -78,25 +78,28 @@ export default function ServiceSection() {
                       ? "scale-105 shadow-lg"
                       : "scale-90 opacity-85"
                   }`} >
-                <img
-                ref={(el) => (tiltRefs.current[index] = el)}
-                  src={service.image}
-                  alt={service.imagealt}
-                  className={`w-full rounded-lg  shadow-lg `} 
-              />
+                    <img
+                    ref={(el) => (tiltRefs.current[index] = el)}
+                      src={service.image}
+                      alt={service.imagealt}
+                      className={`w-full rounded-lg  shadow-lg `} 
+                  />
                 </div>
 
                 <div className="md:w-1/2 lg:w-auto flex flex-col md:gap-3">
-                    <h3 className="text-center text-xl md:text-2xl text-accent font-amulya">{service.title}</h3>
+                    <h3 className="text-center text-xl md:text-2xl text-accent font-amulya lg:text-3xl">{service.title}</h3>
                     <p className="text-dark text-center lg:hidden text-m md:text-xl">{service.description}</p>
                 </div>
 
               </div>
           ))}
         </div>
-        <div>
-          {selectedService }
-        </div>
+        
+        <div className="hidden border-t-2 border-dark pt-5 lg:block mx-52 text-center text-2xl text-dark font-synonym transition-transform duration-500">
+          {selectedService === null ? "We offer high-quality surfboards, wetsuits, and other gear for rent, so you can enjoy your surf experience without the hassle of bringing your own equipment." : services.find((service) => service.id === selectedService)?.description}
+          
+        
+               </div>
         
     </div>
     </section>

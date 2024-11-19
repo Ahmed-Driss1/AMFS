@@ -7,6 +7,22 @@ export default {
   theme: {
     extend: {
       
+      animation: {
+        slideIn: "slideIn 1s ease-in-out forwards",
+      },
+      keyframes: {
+        slideIn: {
+          "0%": {
+            transform: "translateY(100%)",
+            opacity: 0,
+          },
+          "100%": {
+            transform: "translateY(0)",
+            opacity: 1,
+          },
+        },
+      },
+      
       fontFamily: {
         synonym: ['Synonym', 'sans-serif'],
         amulya: ['Amulya', 'sans-serif'],
