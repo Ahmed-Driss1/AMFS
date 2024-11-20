@@ -27,12 +27,15 @@ export default {
         synonym: ['Synonym', 'sans-serif'],
         amulya: ['Amulya', 'sans-serif'],
         Shrikhand: ['Shrikhland', 'serif'],
+        switzer: ['Switzer', 'sans-serif'],
       },
       
       colors: {
-        light: '#ECE3DE',
-        accent: '#1A548A',
-        dark: '#2F2C2C',
+        light: '#DBCCC4',
+        accent: '#315474',
+        dark: '#462611',
+        darkaccent: '#A6B2DE',
+
       },
       aspectRatio: {
         "9/6" : '9 / 6',

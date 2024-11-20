@@ -2,22 +2,35 @@ import Hero from "../component/Hero.jsx";
 import About from "../component/About.jsx";
 import Services from "../component/Services.jsx";
 import Staff from "../component/Staff.jsx";
+import NavBar from "../component/navbar.tsx";
 
 export default function Home() {
   return (
-    <div className="relative">
-      <div className="sticky top-0 min-h-screen">
+    
+      
+    <div>
+    <NavBar />
+    <div>
+      <div className="sticky top-0 z-0 h-1vh">
         <Hero />
       </div>
-      <div className="sticky top-0 min-h-screen shadow-2xl ">
-        <About />
+
+     <div className="sticky z-10">
+        <div>
+          <About  />
+        </div>
+
+        <div>
+          <Services />
+        </div>
+
+        <div>
+          <Staff />
+        </div>
       </div>
-      <div className="sticky top-0 overflow-scroll">
-        <Services />
-      </div>
-      {/* <div className="sticky top-0 ">
-        <Staff />
-      </div> */}
+      
+     
     </div>
+  </div>
   );
 }

@@ -58,10 +58,10 @@ export default function ServiceSection() {
   }, []);
 
   return (
-    <section className="bg-light min-h-screen">
+    <section className="bg-dark min-h-screen">
       <div className="flex flex-col items-center gap-10 pt-10 pb-48">
         <div>
-          <h2 className="text-accent text-center mt-9 mb-20 font-Shrikhand text-2xl sm:text-3xl md:text-4xl lg:text-6xl">More than a surf club</h2>
+          <h2 className="text-darkaccent text-center mt-9 mb-20 font-Shrikhand text-2xl sm:text-3xl md:text-4xl lg:text-6xl">More than a surf club</h2>
         </div> 
     
         <div className="flex gap-20 flex-col lg:flex-row items-center px-7 mb-20 cursor-pointer">
@@ -87,15 +87,15 @@ export default function ServiceSection() {
                 </div>
 
                 <div className="md:w-1/2 lg:w-auto flex flex-col md:gap-3">
-                    <h3 className="text-center text-xl md:text-2xl text-accent font-amulya lg:text-3xl">{service.title}</h3>
-                    <p className="text-dark text-center lg:hidden text-m md:text-xl">{service.description}</p>
+                    <h3 className="text-center text-xl md:text-2xl text-darkaccent font-Shrikhand lg:text-3xl">{service.title}</h3>
+                    <p className="text-light font-switzer text-center lg:hidden text-m md:text-xl">{service.description}</p>
                 </div>
 
               </div>
           ))}
         </div>
         
-        <div className="hidden border-t-2 border-dark pt-5 lg:block mx-52 text-center text-2xl text-dark font-synonym transition-transform duration-500">
+        <div className="hidden border-t-2 border-light pt-5 lg:block mx-52 text-center text-2xl text-light font-switzer transition-transform duration-500">
           {selectedService === null ? "We offer high-quality surfboards, wetsuits, and other gear for rent, so you can enjoy your surf experience without the hassle of bringing your own equipment." : services.find((service) => service.id === selectedService)?.description}
           
         
