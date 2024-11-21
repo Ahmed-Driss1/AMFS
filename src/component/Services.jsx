@@ -96,7 +96,7 @@ export default function ServiceSection() {
         </div>
         
         <div className="hidden border-t-2 border-light pt-5 lg:block mx-52 text-center text-2xl text-light font-switzer transition-transform duration-500">
-          {selectedService === null ? "We offer high-quality surfboards, wetsuits, and other gear for rent, so you can enjoy your surf experience without the hassle of bringing your own equipment." : services.find((service) => service.id === selectedService)?.description}
+          {selectedService === null ? "We offer high-quality surfboards, wetsuits, and other gear for rent, so you can enjoy your surf experience without the hassle of bringing your own equipment." : services.find((service) => service.id === selectedService).description}
           
         
                </div>

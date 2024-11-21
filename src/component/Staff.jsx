@@ -1,26 +1,95 @@
-export default function Staff(){
+import { motion } from "framer-motion";
+import { useState } from "react";
+import IgIcon from "../assets/icons/icons8-instagram-24.svg";
 
-    return(<section className="min-h-screen bg-light">
-        <h2 className="font-amulya text-center text-accent text-4xl lg:text-3xl pt-8 lg:pt-4">What we offer</h2>
+const img = "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+const coaches = [
+  {
+    id: 1,
+    fullName: "John Doe",
+    description:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate nobis earum veritatis, ut explicabo mijioajz zdjadi",
+    igUrl: "https://www.instagram.com/johndoe/",
+    imageUrl: img,
+  },
+  {
+    id: 2,
+    fullName: "Jane Smith",
+    description:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate nobis earum veritatis, ut explicabo mijioajz zdjadi",
+    igUrl: "https://www.instagram.com/janesmith/",
+    imageUrl: img,
+  },
+  {
+    id: 3,
+    fullName: "Michael Johnson",
+    description:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate nobis earum veritatis, ut explicabo mijioajz zdjadi",
+    igUrl: "https://www.instagram.com/michaeljohnson/",
+    imageUrl: img,
+  },
+];
 
+export default function Staff() {
+  // Create hover states for each coach
+  const [hoverStates, setHoverStates] = useState(
+    Array(coaches.length).fill(false)
+  );
 
-        <div
-      class="bg-gray-800 px-8 py-10 shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] w-full max-w-sm rounded-2xl font-[sans-serif] overflow-hidden mx-auto mt-4">
-      <div class="flex flex-col items-center">
-        <img src='https://readymadeui.com/team-2.webp' class="w-60 h-60 rounded-full object-cover" />
-        <div class="mt-6 text-center">
-          <p class="text-base text-gray-300 font-bold uppercase">John Doe</p>
-          <h3 class="text-white text-base mt-3 leading-relaxed">This game has always been, and will always be, about buckets. A
-            change of work is the best rest.</h3>
+  const handleMouseEnter = (index) => {
+    const updatedStates = [...hoverStates];
+    updatedStates[index] = true;
+    setHoverStates(updatedStates);
+  };
+
+  const handleMouseLeave = (index) => {
+    const updatedStates = [...hoverStates];
+    updatedStates[index] = false;
+    setHoverStates(updatedStates);
+  };
+
+  return (
+    <section>
+      <div className="min-h-screen bg-light py-12">
+        <div className="flex flex-col justify-center gap-1">
+        <h2 className="text-accent text-center pt-9 font-Shrikhand text-2xl sm:text-3xl md:text-4xl lg:text-6xl">Our sertified coaches</h2>
+     
+        <p className="text-center lg:text-2xl  sm:texl-l  md:text-xl text-m text-dark font-switzer p-10"> we have so many students that we can't caount how many we have great coaches great every thing like khaled say we the best </p>
+        </div>
+
+        <div className="flex justify-around items-center flex-wrap gap-6 pt-10  ">
+          {coaches.map((coach, index) => (
+            <div
+              key={coach.id}
+              className="h-80 w-64 bg-blue-500 overflow-hidden rounded-xl relative cursor-pointer"
+              onMouseEnter={() => handleMouseEnter(index)}
+              onMouseLeave={() => handleMouseLeave(index)}
+              style={{
+                backgroundImage: `url(${coach.imageUrl})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <motion.div
+                className="absolute bottom-0 h-full w-full bg-dark rounded-xl flex flex-col justify-between"
+                animate={hoverStates[index] ? { y: "0%" } : { y: "80%" }}
+                initial={{ y: "80%" }}
+                transition={{ type: "spring", stiffness: 300, damping: 70 }}
+              >
+                <div className="text-lg flex justify-between mx-4 items-center mt-4">
+                  <h3 className="text-darkaccent font-Shrikhand">
+                    {coach.fullName}
+                  </h3>
+                  <img src={IgIcon} alt="Icon" className="w-7 h-7" />
+                </div>
+                <p className="text-light font-switzer mb-10 mx-4">
+                  {coach.description}
+                </p>
+              </motion.div>
+            </div>
+          ))}
         </div>
       </div>
-    </div>
-
-
     </section>
-    )
-
-
-
-
-} 
+  );
+}
