@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Loading from "../component/Loading.jsx";
 import Hero from "../component/Hero.jsx";
-
 import About from "../component/About.jsx";
 import Services from "../component/Services.jsx";
 import Staff from "../component/Staff.jsx";
@@ -17,7 +16,7 @@ export default function Home() {
     setTimeout(() => {
       setLoading(false); // Hide Loading
       setTimeout(() => setShowNavBar(true), 500); // Delay NavBar rendering
-    }, 1000); // Duration of the loading animation
+    }, 1300); // Duration of the loading animation
   }, []);
 
   return (
