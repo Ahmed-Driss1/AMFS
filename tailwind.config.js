@@ -31,9 +31,9 @@ export default {
       },
       
       colors: {
-        light: '#DBCCC4',
+        light: '#F6EDE8',
         accent: '#315474',
-        dark: '#462611',
+        dark: '#29170C',
         darkaccent: '#A6B2DE',
 
       },
