@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import LogoIcon from "../assets/icons/logo.svg";
 
 const NavBar: React.FC = () => {
   // const [isVisible, setIsVisible] = useState(true);
@@ -35,8 +36,8 @@ const NavBar: React.FC = () => {
     <nav
       className="fixed top-4 left-4 right-4 z-50 bg-emerald-950 bg-opacity-10 backdrop-blur-lg border border-white border-opacity-20 shadow-lg rounded-full transition-all duration-500 opacity-100 visible"
     >
-      <div className="navebare flex justify-between items-center p-4">
-        <div className="navbar-logo text-lg font-bold">MyApp</div>
+      <div className="navebare flex justify-between items-center p-4"> <img className='navbar-logo h-10 pl-5' src={LogoIcon} />
+        {/* <div className="navbar-logo text-lg font-bold">MyApp</div> */}
         <div className="navbar-links flex space-x-4">
           <a href="#home" className="navbar-link hover:text-blue-500 transition-colors">
             Home
