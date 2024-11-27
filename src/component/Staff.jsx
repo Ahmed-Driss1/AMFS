@@ -66,13 +66,13 @@ export default function Staff() {
             Our Certified Coaches
           </h2>
 
-          <p className="text-center lg:text-2xl sm:text-l md:text-xl text-m text-dark font-switzer p-10">
+          <p className="text-center lg:text-2xl sm:text-l md:text-xl text-m text-dark font-switzer p-10 lg:mx-32 opacity-85">
             We have so many students that we can't count how many. Our great coaches ensure everything runs smoothly. Like Khaled says, *We the best!*
           </p>
         </div>
 
         {/* Coach Cards */}
-        <div className="flex justify-around items-center flex-wrap gap-6 pt-10">
+        <div className="flex justify-around items-center flex-wrap gap-6 pt-10 mb-32">
           {coaches.map((coach, index) => (
             <div
               key={coach.id}

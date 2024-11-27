@@ -5,7 +5,9 @@ import Hero from "../component/Hero.jsx";
 import About from "../component/About.jsx";
 import Services from "../component/Services.jsx";
 import Staff from "../component/Staff.jsx";
+import Calltoaction from "../component/Calltoacition.jsx";
 import NavBar from "../component/navbar.tsx";
+import Footer from "../component/Footer.jsx";
 
 export default function Home() {
   const [loading, setLoading] = useState(true); // Controls Loading visibility
@@ -64,6 +66,8 @@ export default function Home() {
             <About />
             <Services />
             <Staff />
+            <Calltoaction />
+            <Footer />
           </div>
         </div>
       )}

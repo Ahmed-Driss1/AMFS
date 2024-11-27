@@ -68,7 +68,7 @@ export default function ServiceSection() {
 
   return (
     <section className="bg-dark min-h-screen">
-      <div className="flex flex-col items-center gap-10 pt-10 pb-48">
+      <div className="flex flex-col items-center lg:justify-around gap-10 pt-10 pb-48">
         {/* Section Title */}
         <motion.div
           initial="hidden"
@@ -82,7 +82,7 @@ export default function ServiceSection() {
         </motion.div>
 
         {/* Service Cards */}
-        <div className="flex gap-20 flex-col lg:flex-row items-center px-7 mb-20 cursor-pointer">
+        <div className="flex flex-col lg:flex-row justify-arround items-center cursor-pointer lg:mx-12 px-7 mb-20 gap-12  ">
           {services.map((service, index) => (
             <motion.div
               key={service.id}
@@ -107,7 +107,7 @@ export default function ServiceSection() {
                   ref={(el) => (tiltRefs.current[index] = el)}
                   src={service.image}
                   alt={service.imagealt}
-                  className="w-full rounded-lg shadow-lg"
+                  className="w-full rounded-lg shadow-lg "
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true, amount: 0.5 }}
@@ -122,7 +122,7 @@ export default function ServiceSection() {
                 viewport={{ once: true, amount: 0.5 }}
                 variants={fadeUp}
               >
-                <h3 className="text-center text-xl md:text-2xl text-darkaccent font-Shrikhand lg:text-3xl">
+                <h3 className="text-center text-xl  md:text-2xl text-darkaccent font-Shrikhand lg:text-3xl">
                   {service.title}
                 </h3>
                 <p className="text-light font-switzer text-center lg:hidden text-m md:text-xl">
@@ -134,7 +134,7 @@ export default function ServiceSection() {
         </div>
 
         {/* Animated Last Text Section */}
-        <div className="hidden lg:block mx-52 text-center text-2xl text-light font-switzer transition-transform duration-500">
+        <div className="hidden lg:block mx-52 text-center text-2xl opacity-85 border-y-2 py-14 text-light font-switzer transition-transform duration-500">
           <AnimatePresence mode="wait">
             <motion.p
               key={hoveredService} // Dynamic key to trigger animation on hover change
@@ -148,7 +148,18 @@ export default function ServiceSection() {
                 : services.find((service) => service.id === hoveredService).description}
             </motion.p>
           </AnimatePresence>
+          
         </div>
+          <motion.button
+            initial={{ opacity: 0, scale: 0.8 }} // Apparition animation
+            animate={{ opacity: 1, scale: 1 }}
+            whileHover={{ scale: 1.1 }} // Expand on hover
+            whileTap={{ scale: 0.95 }} // Shrink on tap
+            transition={{ type: "spring", stiffness: 300, damping: 15 }} // Smooth transitions
+            className="mt-20 border-4 border-darkaccent bg-darkaccent text-dark text-xl font-Shrikhand p-4 rounded-xl shadow-lg"
+          >
+          More information
+        </motion.button>
       </div>
     </section>
   );

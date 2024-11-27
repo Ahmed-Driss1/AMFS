@@ -2,40 +2,41 @@ import React, { useState, useEffect } from 'react';
 import LogoIcon from "../assets/icons/logo.svg";
 
 const NavBar: React.FC = () => {
-  // const [isVisible, setIsVisible] = useState(true);
-  // const [lastScrollY, setLastScrollY] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
-  // // Handle the scroll behavior
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const currentScrollY = window.scrollY;
+  // Handle the scroll behavior
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
 
-  //     if (currentScrollY > lastScrollY) {
-  //       // Scrolling down
-  //       setIsVisible(false);
-  //     } else {
-  //       // Scrolling up
-  //       setIsVisible(true);
-  //     }
-  //     setLastScrollY(currentScrollY);
-  //   };
+      if (currentScrollY > lastScrollY) {
+        // Scrolling down
+        setIsVisible(false);
+      } else {
+        // Scrolling up
+        setIsVisible(true);
+      }
+      setLastScrollY(currentScrollY);
+    };
 
-  //   window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll);
-  //   };
-  // }, [lastScrollY]);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [lastScrollY]);
 
   return (
-    // <nav
-    //   className={`fixed top-4 left-4 right-4 z-50 bg-emerald-950 bg-opacity-10 backdrop-blur-lg border border-white border-opacity-20 shadow-lg rounded-full transition-all duration-500 ${
-    //     isVisible ? 'opacity-100 visible' : 'opacity-0 invisible'
-    //   }`}
-    // >
     <nav
-      className="fixed top-4 left-4 right-4 z-50 bg-emerald-950 bg-opacity-10 backdrop-blur-lg border border-white border-opacity-20 shadow-lg rounded-full transition-all duration-500 opacity-100 visible"
+      className={`fixed top-4 left-4 right-4 z-50 bg-emerald-950 bg-opacity-10 backdrop-blur-lg border border-white border-opacity-20 shadow-lg rounded-full transition-all duration-500 ${
+        isVisible ? 'opacity-100 visible' : 'opacity-0 invisible'
+      }`}
     >
+
+    {/* // <nav
+    //   className="fixed top-4 left-4 right-4 z-50 bg-emerald-950 bg-opacity-10 backdrop-blur-lg border border-white border-opacity-20 shadow-lg rounded-full transition-all duration-500 opacity-100 visible"
+    // > */}
       <div className="navebare flex justify-between items-center p-4"> <img className='navbar-logo h-10 pl-5' src={LogoIcon} />
         {/* <div className="navbar-logo text-lg font-bold">MyApp</div> */}
         <div className="navbar-links flex space-x-4">
