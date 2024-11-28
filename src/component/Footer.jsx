@@ -1,35 +1,48 @@
-import React from "react";
 import { Facebook, Instagram, Phone, Mail, MapPin } from "lucide-react";
 
-const Footer = () => {
+export default function Footer() {
   return (
-    <footer className="bg-blue-900 text-white">
+    <footer className="bg-dark text-light">
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Left section: Title and Description */}
           <div>
-            <h2 className="text-2xl font-bold mb-2">Surf's Up Club</h2>
-            <p className="text-blue-200">
-              Riding waves and creating memories since 2005. Join our community of passionate surfers!
+            <h2 className="text-2xl text-darkaccent font-Shrikhand mb-2">
+              Asociation des free surfer Maroccain
+            </h2>
+            <p className="font-Switzer">
+              Riding waves and creating memories since 2005. Join our community
+              of passionate surfers!
             </p>
           </div>
 
           {/* Center section: List of Pages */}
           <div>
-            <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
+            <h3 className="text-xl text-darkaccent font-Shrikhand mb-4">
+              Quick Links
+            </h3>
+            <ul className="space-y-2 font-Switzer">
               <li>
-                <a href="/" className="hover:text-blue-300 transition-colors">
+                <a
+                  href="/"
+                  className="hover:text-darkaccent transition-colors"
+                >
                   Home
                 </a>
               </li>
               <li>
-                <a href="/services" className="hover:text-blue-300 transition-colors">
+                <a
+                  href="/services"
+                  className="hover:text-darkaccent transition-colors"
+                >
                   Services
                 </a>
               </li>
               <li>
-                <a href="/contact" className="hover:text-blue-300 transition-colors">
+                <a
+                  href="/contact"
+                  className="hover:text-darkaccent transition-colors"
+                >
                   Contact
                 </a>
               </li>
@@ -38,13 +51,15 @@ const Footer = () => {
 
           {/* Right section: Social Media and Contact Info */}
           <div>
-            <h3 className="text-xl font-semibold mb-4">Connect With Us</h3>
+            <h3 className="text-xl text-darkaccent font-Shrikhand mb-4">
+              Connect With Us
+            </h3>
             <div className="flex space-x-4 mb-4">
               <a
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-blue-300 transition-colors"
+                className="hover:text-darkaccent transition-colors"
               >
                 <Instagram size={24} />
                 <span className="sr-only">Instagram</span>
@@ -53,7 +68,7 @@ const Footer = () => {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-blue-300 transition-colors"
+                className="hover:text-darkaccent transition-colors"
               >
                 <Facebook size={24} />
                 <span className="sr-only">Facebook</span>
@@ -62,7 +77,7 @@ const Footer = () => {
                 href="https://wa.me/1234567890"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-blue-300 transition-colors"
+                className="hover:text-darkaccent transition-colors"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -81,14 +96,17 @@ const Footer = () => {
                 <span className="sr-only">WhatsApp</span>
               </a>
             </div>
-            <div className="space-y-2 text-sm">
+            <div className="space-y-2 text-sm font-Switzer">
               <p className="flex items-center">
                 <MapPin size={16} className="mr-2" />
                 123 Surf Street, Beach City, 12345
               </p>
               <p className="flex items-center">
                 <Mail size={16} className="mr-2" />
-                <a href="mailto:info@surfsupclub.com" className="hover:underline">
+                <a
+                  href="mailto:info@surfsupclub.com"
+                  className="hover:underline"
+                >
                   info@surfsupclub.com
                 </a>
               </p>
@@ -102,12 +120,11 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="mt-8 pt-8 border-t border-blue-700 text-center text-sm text-blue-300">
-        <p>&copy; 2024 Surf's Up Club. All rights reserved.</p>
+      <hr className="my-6 border-light" />
+      <div className="mt-8  pt-8 text-center text-sm font-Switzer pb-8">
+        <p>&copy; 2024 AMFS. All rights reserved.</p>
         <p>Made by Site Symphony Studio</p>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

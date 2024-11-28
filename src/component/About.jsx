@@ -84,9 +84,9 @@ export default function About() {
           />
         </motion.div>
       </div>
-
+      
      
-      <motion.div className="h-auto flex flex-col sm:flex-row-reverse items-center gap-8 lg:gap-30 lg:mx-20 sm:mx-8 lg:mb-10 lg:text-2xl lg:pt-28 lg:border-t-2 border-dark"
+      <motion.div className="h-auto flex flex-col sm:flex-row-reverse items-center gap-8 lg:gap-30 lg:mx-20 sm:mx-8 lg:mb-10 lg:text-2xl lg:pt-16 "
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
@@ -99,7 +99,7 @@ export default function About() {
           viewport={{ once: true, amount: 0.5 }}
         >
           <h3 className="pb-3 text-accent font-Shrikhand">hello</h3>
-          <p className="font-switzer text-dark opa">
+          <p className="font-switzer text-dark opacity-85">
             Our mission is to promote surfing in Morocco and help everyone excel on the waves. With Morocco’s stunning
             coastline, we provide a supportive space for surfers of all levels AAAA AAA AAAAAA AAA AAAAA AAA AAAAA AAAA A AAA AAA AAAAA.
           </p>
